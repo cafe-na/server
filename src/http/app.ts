@@ -1,0 +1,33 @@
+import { env } from '@/env'
+import fastifyCookie from '@fastify/cookie'
+import fastifyCors from '@fastify/cors'
+import fastifyJwt from '@fastify/jwt'
+import fastify from 'fastify'
+import { serializerCompiler, validatorCompiler, ZodTypeProvider } from 'fastify-type-provider-zod'
+
+const server = fastify().withTypeProvider<ZodTypeProvider>()
+
+server.setValidatorCompiler(validatorCompiler)
+server.setSerializerCompiler(serializerCompiler)
+
+server.register(fastifyCors, {
+  origin: env.AUTH_REDIRECT_URL, //url do frontend
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS', 'HEAD'],
+  credentials: true,
+})
+
+server.register(fastifyCookie, {
+  secret: '',
+  hook: 'onRequest',
+  parseOptions: {},
+})
+
+server.register(fastifyJwt, {
+  secret: '',
+  cookie: {
+    cookieName: 'auth',
+    signed: false
+  }
+})
+
+export { server }
