@@ -17,13 +17,13 @@ server.register(fastifyCors, {
 })
 
 server.register(fastifyCookie, {
-  secret: '',
+  secret: env.JWT_SECRET,
   hook: 'onRequest',
   parseOptions: {},
 })
 
 server.register(fastifyJwt, {
-  secret: '',
+  secret: env.JWT_SECRET,
   cookie: {
     cookieName: 'auth',
     signed: false

@@ -1,4 +1,7 @@
 import { server } from "./app";
+import { createUser } from "./routes/auth/create-user";
+
+server.register(createUser)
 
 server.listen({
   port: 3333,
