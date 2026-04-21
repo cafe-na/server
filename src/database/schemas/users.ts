@@ -6,6 +6,7 @@ export const users = pgTable('users', {
   name: text().notNull(),
   avatarURL: text(),
   legalIdNumber: text(),
+  phoneNumber: text(),
   abacateCustomerId: text().unique(),
   createdAt: timestamp().defaultNow(),
   updatedAt: timestamp().$onUpdateFn(() => new Date())

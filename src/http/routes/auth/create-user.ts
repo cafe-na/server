@@ -67,7 +67,7 @@ export const createUser: FastifyPluginAsyncZod = async (server) => {
               email: userData.email,
               name: userData.name,
               avatarURL: userData.picture,
-              abacateCustomerId: customer.data.id,
+              abacateCustomerId: customer.id,
             })
             .returning()
         }

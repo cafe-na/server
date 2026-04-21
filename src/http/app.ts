@@ -13,7 +13,6 @@ server.setSerializerCompiler(serializerCompiler)
 server.register(fastifyCors, {
   origin: env.AUTH_REDIRECT_URL, //url do frontend
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS', 'HEAD'],
-  credentials: true,
 })
 
 server.register(fastifyCookie, {
