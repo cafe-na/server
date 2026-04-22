@@ -9,6 +9,9 @@ export const addresses = pgTable('addresses', {
   state: text().notNull(),
   zipCode: text().notNull(),
   country: text().notNull().default('BR'),
+  neighborhood: text().notNull(),
+  number: text().notNull(),
+  complement: text(),
   createdAt: timestamp().defaultNow(),
   updatedAt: timestamp().$onUpdateFn(() => new Date())
 })

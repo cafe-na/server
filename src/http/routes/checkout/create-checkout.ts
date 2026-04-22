@@ -5,7 +5,7 @@ import { abacatePay } from "@/services/abacate-pay";
 import { eq } from "drizzle-orm";
 import { FastifyPluginAsyncZod } from "fastify-type-provider-zod";
 import { z } from "zod/v4";
-import { auth } from "../middlewares/auth";
+import { auth } from "@/http/middlewares/auth";
 
 export const createCheckout: FastifyPluginAsyncZod = async (server) => {
   server
