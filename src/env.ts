@@ -6,6 +6,7 @@ const envSchema = z.object({
   NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
   JWT_SECRET: z.string(),
   ABACATEPAY_API_KEY: z.string(),
+  ABACATEPAY_WEBHOOK_TOKEN: z.string(),
 })
 
 export const env = envSchema.parse(process.env)

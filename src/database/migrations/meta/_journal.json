@@ -57,6 +57,13 @@
       "when": 1776806487931,
       "tag": "0007_fat_proteus",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1776889818969,
+      "tag": "0008_subscriptions_plan_id",
+      "breakpoints": true
     }
   ]
 }

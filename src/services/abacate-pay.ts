@@ -37,7 +37,7 @@ class AbacatePayClient {
   }
 
   async createBilling(body: any) {
-    return this.request<any>("/billing/create", {
+    return this.request<any>("/subscriptions/create", {
       method: "POST",
       body: JSON.stringify(body),
     })
